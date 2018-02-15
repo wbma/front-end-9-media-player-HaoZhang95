@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StorageProvider } from '../../providers/storage/storage';
 import { HttpServiceProvider } from '../../providers/http-service/http-service';
 import { ConfigProvider } from '../../providers/config/config';
+import { EXIF } from 'exif-js';
 /**
  * Generated class for the MediaInfoPage page.
  *
@@ -24,6 +25,8 @@ export class MediaInfoPage {
   public userId;
   public fileId;
   public isLiked;
+  public lat;
+  public lon;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: StorageProvider,
     public httpService: HttpServiceProvider, public config: ConfigProvider, ) {
@@ -122,5 +125,23 @@ export class MediaInfoPage {
       console.log(err);
     });
   }
+
+  // getExif(evt) {
+  //   try {
+  //     EXIF.getData(evt.target, () => {
+  //       // console.log(EXIF.getAllTags(evt.target));
+  //       if (EXIF.getTag(evt.target, 'GPSLatitude')) {
+  //         this.lat = this.degreesToDecimals(
+  //           EXIF.getTag(evt.target, 'GPSLatitude'));
+  //         this.lon = this.degreesToDecimals(
+  //           EXIF.getTag(evt.target, 'GPSLongitude'));
+  //       } else {
+  //         this.message = 'No GPS data';
+  //       }
+  //     });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
 }

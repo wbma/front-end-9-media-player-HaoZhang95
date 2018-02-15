@@ -30,8 +30,11 @@
               <h1>Title: {{mediaItem.title}}</h1>
               <h1>Desc: {{mediaItem.description}}</h1>
               <h1>Upload by: {{authorInfo.username}}</h1>
-              <h1 *ngFor="let item of likesBy">item.username</h1>
+              <h1>Likes By:</h1>
           </ion-card-content>
+
+
+          <ion-card-content *ngFor="let item of likesBy"><h1>{{item.username}}</h1></ion-card-content>
 
       </div>
   </ion-card>
