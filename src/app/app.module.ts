@@ -18,6 +18,7 @@ import { HttpServiceProvider } from '../providers/http-service/http-service';
 import { ConfigProvider } from '../providers/config/config';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { ThumbnailPipe } from '../pipes/thumbnail/thumbnail';
+import { MediaInfoPage } from '../pages/media-info/media-info';
 
 // 自定义的pipe既需要写在declaration中,也需要声明在provider中
 @NgModule({
@@ -28,6 +29,7 @@ import { ThumbnailPipe } from '../pipes/thumbnail/thumbnail';
     LoginPage,
     RegisterPage,
     ProfilePage,
+    MediaInfoPage,
     UploadPage,
     ThumbnailPipe
   ],
@@ -45,7 +47,8 @@ import { ThumbnailPipe } from '../pipes/thumbnail/thumbnail';
     LoginPage,
     RegisterPage,
     ProfilePage,
-    UploadPage
+    UploadPage,
+    MediaInfoPage
   ],
   providers: [
     StatusBar,

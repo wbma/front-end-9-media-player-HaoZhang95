@@ -15,11 +15,9 @@
 <ion-content>
 
     <ion-list>
-        <ion-item *ngFor="let item of list">
+        <ion-item *ngFor="let item of list" [navPush]='MediaInfoPage' [navParams]="{'fileId':item['file_id'], 'userId':item['user_id']}"  >
           <ion-thumbnail item-start>
-              <!-- <img [src]="config.fileUrl + (item?.filename)"> -->
               <img [src]="config.fileUrl + (item?.filename | thumbnail: 'small')">
-              <!-- <img [src]="config.fileUrl + item.filename "> -->
           </ion-thumbnail>
           <h2>Title: {{item.title}}</h2>
           <p>Desc: {{item.description}}</p>
