@@ -19,7 +19,7 @@
           <ion-thumbnail item-start>
               <img [src]="config.fileUrl + (item?.filename | thumbnail: 'small')">
           </ion-thumbnail>
-          <h2>Title: {{item.title}}</h2>
+          <h2>Title: {{item.title}} &nbsp;&nbsp;({{item?.media_type}})</h2>
           <p>Desc: {{item.description}}</p>
           <button ion-button clear item-end>View</button>
         </ion-item>

@@ -17,7 +17,17 @@
 
   <ion-card>
       <div>
-          <img [src]="config.fileUrl + mediaItem.filename ">
+          <div *ngIf="mediaItem.media_type === 'image'">
+              <img [src]="config.fileUrl + mediaItem.filename ">
+          </div>
+          <div *ngIf="mediaItem.media_type === 'audio'">
+            <audio *ngIf="mediaItem.media_type == 'audio'" controls>
+              <source  [src] ="config.fileUrl + mediaItem.filename" [type]="mediaItem.mime_type">
+            </audio>
+          </div>
+          <div *ngIf="mediaItem.media_type === 'video'">
+            <video [src]="config.fileUrl + mediaItem.filename" controls></video>
+          </div>
           <button ion-button item-end outline icon-start (tap)='addToFavourite()' *ngIf="!isLiked">
               <ion-icon name='star'></ion-icon>Like
           </button>
@@ -27,6 +37,7 @@
           </button>
 
           <ion-card-content>
+              <h1>Type: {{mediaItem.media_type}}</h1>
               <h1>Title: {{mediaItem.title}}</h1>
               <h1>Desc: {{mediaItem.description}}</h1>
               <h1>Upload by: {{authorInfo.username}}</h1>
